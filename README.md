@@ -12,5 +12,4 @@
 - Backend: Node.js, Express.js
 - Database: MongoDB, Mongoose
 - Frontend: React.js, CSS
-- Authentication: Passport.js
 - AI Integration: Gemini API
