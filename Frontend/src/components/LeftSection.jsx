@@ -70,6 +70,11 @@ const LeftSection = () => {
           <li 
           key={idx}
           onClick={(e)=>changeThread(thread.threadId)}
+           className={
+          currThreadId === thread.threadId
+            ? "active"
+            : ""
+          }
           >{thread.title}
           <i className="fa-solid fa-trash" 
           onClick={(e)=>{

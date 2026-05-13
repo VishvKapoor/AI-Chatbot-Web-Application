@@ -6,8 +6,7 @@ import rehypeHighlight from 'rehype-highlight'
 import "highlight.js/styles/github-dark.css"
 import './Chat.css'
 
-//react-markdown
-//rehype-highlight
+
 const Chat = () => {
   const {newChat,prevChats,reply}=useContext(MyContext)
   const [latestReply,setLatestReply]=useState(null)
@@ -35,7 +34,13 @@ const Chat = () => {
   },[prevChats,reply])
   return (
     <>
-    {newChat && <h1>Start a New chat !</h1>}
+{
+  newChat &&
+  <div className="heroText">
+      <h1>Start a New Chat</h1>
+      <p>Ask anything. Explore everything.</p>
+  </div>
+}
     <div className="chats">
     {
       prevChats ?.slice(0,-1).map((chat,idx)=>

@@ -53,7 +53,7 @@ useEffect(()=>{
   return (
     <div className='chatWindow'>
       <div className="navbar">
-          <span>SigmaGpt<i className="fa-solid fa-chevron-down"></i></span>
+          <span>AI Chatbot<i ></i></span>
           <div className="userIconDiv">
             <span className='userIcon'><i className="fa-solid fa-user"></i></span>
           </div>
