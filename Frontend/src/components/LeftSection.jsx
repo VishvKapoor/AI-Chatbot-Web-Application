@@ -4,6 +4,7 @@ import { useContext } from 'react'
 import { MyContext } from '../MyContext'
 import {v1 as uuidv1} from 'uuid'
 import API_URL from '../config'
+import logo from '../assets/blacklogo.png'
 const LeftSection = () => {
   const {allThreads,setAllThreads,currThreadId,setnewchat,setPrompt,setReply,setcurrThreadId,setPrevChats}=useContext(MyContext)
 
@@ -60,7 +61,7 @@ const LeftSection = () => {
     <section className='sidebar'>
       {/* new chat button */}
       <button onClick={createNewChat}>
-        <img src="src/assets/blacklogo.png" alt="gpt logo" className='logo' />
+        <img src={logo} alt="gpt logo" className='logo' />
         <span><i className="fa-solid fa-pen-to-square"></i></span>
       </button>
 
