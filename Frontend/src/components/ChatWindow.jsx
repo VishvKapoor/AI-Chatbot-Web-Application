@@ -2,7 +2,7 @@ import React from 'react'
 import Chat from './Chat'
 import './ChatWindow.css'
 import {SyncLoader} from 'react-spinners'
-
+import API_URL from '../config'
 import { MyContext } from '../MyContext'
 import { useContext,useState,useEffect} from 'react'
 const ChatWindow = () => {
@@ -26,7 +26,7 @@ const getReply = async () => {
   };
 
   try {
-    const response = await fetch("http://localhost:8080/api/chat", options);
+    const response = await fetch(`${API_URL}/api/chat`, options);
     const data = await response.json();
     console.log(data);
     setReply(data.reply)

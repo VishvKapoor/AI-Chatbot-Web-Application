@@ -3,12 +3,13 @@ import './leftSection.css'
 import { useContext } from 'react'
 import { MyContext } from '../MyContext'
 import {v1 as uuidv1} from 'uuid'
+import API_URL from '../config'
 const LeftSection = () => {
   const {allThreads,setAllThreads,currThreadId,setnewchat,setPrompt,setReply,setcurrThreadId,setPrevChats}=useContext(MyContext)
 
   const getAllThreads=async()=>{
     try{
-      const response=await fetch("http://localhost:8080/api/thread")
+      const response=await fetch(`${API_URL}/api/thread`)
       const res=await response.json();
       const filteredData=res.map(thread=>({threadId:thread.threadId,title:thread.title}))
       setAllThreads(filteredData)
@@ -31,7 +32,7 @@ const LeftSection = () => {
   const changeThread=async(newthreadId)=>{
     setcurrThreadId(newthreadId)
     try{
-      const response=await fetch(`http://localhost:8080/api/thread/${newthreadId}`)
+      const response=await fetch(`${API_URL}/api/thread/${newthreadId}`)
       const res=await response.json()
       console.log(res)
       setPrevChats(res)
@@ -43,7 +44,7 @@ const LeftSection = () => {
   }
   const deleteThread=async(threadId)=>{
     try{
-      const response=await fetch(`http://localhost:8080/api/thread/${threadId}`,{method:"DELETE"})
+      const response=await fetch(`${API_URL}/api/thread/${threadId}`,{method:"DELETE"})
       const res=await response.json()
 
       //re-render the updated threads
