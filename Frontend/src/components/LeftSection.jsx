@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import './leftSection.css'
+import './LeftSection.css'  
 import { useContext } from 'react'
 import { MyContext } from '../MyContext'
 import {v1 as uuidv1} from 'uuid'
